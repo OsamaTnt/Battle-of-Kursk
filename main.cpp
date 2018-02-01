@@ -1,10 +1,7 @@
-#include <iostream>
 #include <SFML/Graphics.hpp>
 #include "StateManager.h"
 
 const float WIDTH = 1366,HIEGHT = 768;
-
-using namespace std;
 
 int main()
 {
@@ -24,17 +21,17 @@ int main()
         {
             //Enable close window when pressing "x" icon
             if(event->type == sf::Event::Closed) {window.close();}
+            //event-manager
             state_manager->eventManager(&window,event,mouse);
         }
 
         //updated everyFrame
         state_manager->update(&window,mouse);
-
+        
+        //render process
         window.clear();
         state_manager->renderManager(&window);
         window.display();
-
     }
-
     return 0;
 }
