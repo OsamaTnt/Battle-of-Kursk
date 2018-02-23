@@ -3,28 +3,17 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "MainMenu.h"
-
-////stateMachines structures
-//MainMenu
-//struct bMAINMENU
-//{bool start,soundOn,exit,showOptions,showStory;};
-
-//Story
-//struct bSTORY
-//{bool start,nextPage,End;};
-
-//Game
-//struct bGAME
-//{bool start,Pause,End;};
+#include "Tank.h"
 
 class StateManager
 {
     private:
         //MainMenu
         MainMenu *mainMenu;
+        Tank *tank;
 
-        //StateMachine's
-        //bMAINMENU *bMainMenu;bSTORY *bStory;bGAME *bGame;
+        //States
+        bool bMainMenu_state,bGameOn_state,bEndGame_state;
 
     public:
         StateManager(sf::RenderWindow *window);
