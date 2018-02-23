@@ -55,7 +55,7 @@ void MainMenu::manageEvents(sf::Event *event,sf::RenderWindow *window,sf::Mouse 
     }
 
         //When enter is pressed
-        if(mouse->isButtonPressed(sf::Mouse::Left))
+        if(mouse->isButtonPressed(sf::Mouse::Left) && bMouseOnItem)
         {
             if(menuCurrentIndex == NumOfMenuItems-1){bExit=true;}
             if(menuCurrentIndex == 0){bStart=true;}
@@ -75,14 +75,19 @@ void MainMenu::manageEvents(sf::Event *event,sf::RenderWindow *window,sf::Mouse 
                 }
             }
 
-            if(menuCurrentIndex == 2){bStart=true;}
-            if(menuCurrentIndex == 3){bStart=true;}
+            if(menuCurrentIndex == 2){}
+            if(menuCurrentIndex == 3){}
         }
 }
 
 void MainMenu::update(sf::RenderWindow *window,sf::Mouse *mouse)
 {
     if(bExit){window->close();}
+}
+
+bool MainMenu::isGameStarts()
+{
+    return bStart;
 }
 
 void MainMenu::Display(sf::RenderWindow *window)
