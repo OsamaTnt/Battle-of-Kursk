@@ -24,11 +24,12 @@ class MainMenu
         float windowX,windowY;
         sf::Font font;
 
-        Image *BG;
+        Image *BG,Story_BG,StoryInterface,Credits_BG;
         MenuItem *menuItem;
 
+
         int menuCurrentIndex;
-        bool bStart,bSoundOn,bExit,bShowOptions,bShowStory;
+        bool bStart,bSoundOn,bExit,bShowOptions,bShowStory,bShowCredits;
         bool bStartMouseHovering,bMouseOnItem;
         int buttonCounter;
 
@@ -36,7 +37,9 @@ class MainMenu
         MainMenu(sf::RenderWindow *window);
         void manageEvents(sf::Event *event,sf::RenderWindow *window,sf::Mouse *mouse);
         void update(sf::RenderWindow *window,sf::Mouse *mouse);
+        bool isGameStarts();
         void Display(sf::RenderWindow *window);
+
         ~MainMenu();
 };
 #endif // MAINMENU_H
